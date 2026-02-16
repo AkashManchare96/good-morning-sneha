@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <title>Radhe Krishna Morning 🌸</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    body {
+      height: 100vh;
+      overflow: hidden;
+      font-family: "Segoe UI", sans-serif;
+      background: url('https://images.unsplash.com/photo-1501785888041-af3ef285b470') no-repeat center center/cover;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+    }
+
+    /* Golden sunrise glow */
+    .sunrise {
+      position: absolute;
+      bottom: -120px;
+      width: 280px;
+      height: 280px;
+      background: radial-gradient(circle, #ffd700, #ffa500, transparent 70%);
+      border-radius: 50%;
+      animation: rise 8s ease-out forwards;
+      filter: blur(10px);
+    }
+
+    @keyframes rise {
+      from { transform: translateY(120px); opacity: 0; }
+      to { transform: translateY(-40px); opacity: 1; }
+    }
+
+    /* Floating divine sparkles */
+    .sparkle {
+      position: absolute;
+      color: #fff6c9;
+      font-size: 14px;
+      animation: floatUp linear infinite;
+      opacity: 0.8;
+    }
+
+    @keyframes floatUp {
+      from { transform: translateY(0); opacity: 0; }
+      to { transform: translateY(-100vh); opacity: 1; }
+    }
+
+    /* Glass devotional card */
+    .card {
+      width: 92%;
+      max-width: 380px;
+      padding: 28px 22px;
+      border-radius: 28px;
+      background: rgba(255, 255, 255, 0.25);
+      backdrop-filter: blur(14px);
+      box-shadow: 0 10px 40px rgba(0,0,0,0.25);
+      text-align: center;
+      z-index: 2;
+      animation: fadeIn 2s ease;
+    }
+
+    h1 {
+      font-size: 26px;
+      color: #ff4d6d;
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      font-size: 14px;
+      color: #6b4f3b;
+      margin-bottom: 18px;
+      font-style: italic;
+    }
+
+    button {
+      border: none;
+      background: linear-gradient(45deg, #ff7eb3, #ff758c);
+      color: white;
+      padding: 12px 22px;
+      border-radius: 22px;
+      font-size: 16px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:active {
+      transform: scale(0.95);
+    }
+
+    .message {
+      display: none;
+      margin-top: 18px;
+      font-size: 16px;
+      color: #4b2e2e;
+      line-height: 1.7;
+      animation: fadeIn 2s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(15px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Peacock feather rain */
+    .feather {
+      position: absolute;
+      top: -40px;
+      font-size: 22px;
+      animation: fall linear forwards;
+      pointer-events: none;
+    }
+
+    @keyframes fall {
+      to {
+        transform: translateY(110vh) rotate(360deg);
+        opacity: 0.7;
+      }
+    }
+
+    /* Small flute glow */
+    .flute {
+      font-size: 28px;
+      margin-top: 12px;
+      animation: glow 2.5s ease-in-out infinite alternate;
+    }
+
+    @keyframes glow {
+      from { text-shadow: 0 0 5px #ffd700; }
+      to { text-shadow: 0 0 18px #ffae00; }
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="sunrise"></div>
+
+  <div class="card">
+    <h1>Good Morning Sneha 🌸</h1>
+    <div class="subtitle">Radhe Radhe… a divine new beginning 🌅</div>
+
+    <button onclick="openBlessing()">Tap for Krishna’s Blessing 🪈</button>
+
+    <div class="message" id="msg">
+      🌿 Aaj ki subah shanti se bhari ho…<br>
+      Krishna ki kripa tum par sada bani ho. 🪷<br><br>
+
+      Har muskaan tumhari roshni ban jaaye…<br>
+      Har khwaab tumhara sach ho jaaye. ✨<br><br>
+
+      Dil me sukoon, aankhon me pyaar rahe…<br>
+      Aur har din tumhara tyohar rahe. 💖<br><br>
+
+      <b>Radhe Radhe, Sneha 🌷</b>
+
+      <div class="flute">🪈</div>
+    </div>
+  </div>
+
+  <!-- Divine flute music -->
+  <audio autoplay loop>
+    <source src="https://cdn.pixabay.com/download/audio/2022/03/15/audio_9c0d5f6c2c.mp3?filename=krishna-flute-ambient-110997.mp3" type="audio/mpeg">
+  </audio>
+
+  <script>
+    function openBlessing() {
+      const msg = document.getElementById("msg");
+      msg.style.display = "block";
+
+      for (let i = 0; i < 18; i++) {
+        const f = document.createElement("div");
+        f.className = "feather";
+        f.innerHTML = "🦚";
+        f.style.left = Math.random() * 100 + "vw";
+        f.style.animationDuration = 4 + Math.random() * 4 + "s";
+        document.body.appendChild(f);
+        setTimeout(() => f.remove(), 8000);
+      }
+
+      for (let i = 0; i < 25; i++) {
+        const s = document.createElement("div");
+        s.className = "sparkle";
+        s.innerHTML = "✨";
+        s.style.left = Math.random() * 100 + "vw";
+        s.style.animationDuration = 6 + Math.random() * 6 + "s";
+        document.body.appendChild(s);
+        setTimeout(() => s.remove(), 10000);
+      }
+    }
+  </script>
+
+</body>
+</html>
